@@ -24,19 +24,21 @@ It helps users quickly evaluate resumes and improve them for internships and job
   * DOCX
 * Blocks unsupported file types
 
-### 🤖 AI-Powered Analysis
+### 🎯 Role-Based Analysis
 
-* Extracts text from resumes
-* Detects skills and keywords
-* Evaluates resume quality
+* Select a target role
+* Compares resume skills with required role skills
+* Calculates match score
+* Detects missing skills
 * Suggests improvements
 
 ### 📊 Smart Output
 
-* Resume score / insights
-* Missing skills feedback
-* Structured recommendations
-* Better readability suggestions
+* Resume match score
+* Found skills
+* Missing skills
+* Improvement suggestions
+* Better resume guidance
 
 ### 🌐 Web Application
 
