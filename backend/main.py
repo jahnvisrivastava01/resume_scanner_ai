@@ -17,29 +17,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# API Route
 @app.post("/analyze")
-async def analyze(
-    file: UploadFile = File(...),
-    role: str = Form(...)
-):
+async def analyze(file: UploadFile = File(...), role: str = Form(...)):
     resume_text = await extract_text(file)
-    result = analyze_resume(resume_text, role)
-    return result
+    return analyze_resume(resume_text, role)
 
+# Absolute paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FRONTEND_DIST = os.path.abspath(os.path.join(BASE_DIR, "../frontend/dist"))
+ASSETS_DIR = os.path.join(FRONTEND_DIST, "assets")
+INDEX_FILE = os.path.join(FRONTEND_DIST, "index.html")
 
-# Paths
-frontend_path = "../frontend/dist"
-assets_path = os.path.join(frontend_path, "assets")
-index_file = os.path.join(frontend_path, "index.html")
+if os.path.exists(ASSETS_DIR):
+    app.mount("/assets", StaticFiles(directory=ASSETS_DIR), name="assets")
 
-# Serve assets only if build exists
-if os.path.exists(assets_path):
-    app.mount("/assets", StaticFiles(directory=assets_path), name="assets")
-
-# Serve React frontend
 @app.get("/{full_path:path}")
-async def serve_frontend(full_path: str):
-    if os.path.exists(index_file):
-        return FileResponse(index_file)
-    return {"message": "Frontend build not found"}
+async def serve_react(full_path: str):
+    if os.path.exists(INDEX_FILE):
+        return FileResponse(INDEX_FILE)
+    return {"message": "Frontend not found"}
