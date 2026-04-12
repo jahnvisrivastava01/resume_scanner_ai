@@ -60,7 +60,7 @@ It helps users quickly evaluate resumes and improve them for internships and job
 
 ### AI / Processing
 
-* Gemini API
+
 * PDF Parsing
 * DOCX Parsing
 
@@ -109,19 +109,22 @@ npm run dev
 ## 📌 Use Cases
 
 * Resume review for students
-* Internship/job preparation
-* Quick screening tool
-* Skill gap analysis
+*Internship/job preparation
+*Skill gap analysis
+*Placement preparation
+*Resume improvement tool
 
 ---
 
 ## 💡 Future Improvements
 
-* Job description matching
-* ATS score
-* Resume templates
-* Login system
-* Saved history
+* Gemini / OpenAI API integration
+*Job description matching
+*ATS score checker
+*Resume templates
+*Login system
+*Saved history
+*Download PDF report
 
 ---
 
