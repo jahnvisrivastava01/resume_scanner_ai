@@ -90,18 +90,21 @@ resume-scanner-ai/
 ### 1. Clone Repo
 
 ```bash
-git clone https://github.com/jahnvisrivastava01/resume-scanner-ai.git
+git clone https://github.com/jahnvisrivastava01/resume_scanner_ai.git
 cd resume-scanner-ai
 ```
 
 ### 2. Backend
 
-```bash
-pip install -r requirements.txt
-python app.py
+```
+cd backend
+python -m venv venv
+source venv/Scripts/activate
+pip install fastapi uvicorn python-multipart PyPDF2 python-docx
+python -m uvicorn main:app --reload
 ```
 
-### 3. Frontend
+### 2. Frontend
 
 ```bash
 cd frontend
