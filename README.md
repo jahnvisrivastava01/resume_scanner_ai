@@ -63,13 +63,6 @@ It helps users quickly evaluate resumes and improve them for internships and job
 * FastAPI
 * PyPDF2
 * python - docx
-
-### AI / Processing
-
-
-* PDF Parsing
-* DOCX Parsing
-
 ---
 
 ## 📂 Project Structure
