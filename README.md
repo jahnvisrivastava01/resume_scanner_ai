@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 Resume Scanner AI is an intelligent web application that analyzes uploaded resumes and provides smart insights based on resume quality, extracted skills, and overall relevance.
 
