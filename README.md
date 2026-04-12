@@ -54,11 +54,15 @@ It helps users quickly evaluate resumes and improve them for internships and job
 
 * React
 * Tailwind CSS
+* Vite
+* Axios
 
 ### Backend
 
 * Python
-* Flask
+* FastAPI
+* PyPDF2
+* python - docx
 
 ### AI / Processing
 
