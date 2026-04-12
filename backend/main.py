@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, Form
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -18,11 +18,23 @@ app.add_middleware(
 )
 
 @app.post("/analyze")
-async def analyze(file: UploadFile = File(...), role: str = Form(...)):
-    resume_text = await extract_text(file)
-    return analyze_resume(resume_text, role)
+async def analyze(
+    file: UploadFile = File(...),
+    role: str = Form(...)
+):
+    allowed_extensions = (".pdf", ".doc", ".docx")
 
-# Absolute paths
+    if not file.filename.lower().endswith(allowed_extensions):
+        raise HTTPException(
+            status_code=400,
+            detail="Only PDF or DOC/DOCX files are allowed"
+        )
+
+    resume_text = await extract_text(file)
+    result = analyze_resume(resume_text, role)
+    return result
+
+# Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FRONTEND_DIST = os.path.abspath(os.path.join(BASE_DIR, "../frontend/dist"))
 ASSETS_DIR = os.path.join(FRONTEND_DIST, "assets")
@@ -32,7 +44,7 @@ if os.path.exists(ASSETS_DIR):
     app.mount("/assets", StaticFiles(directory=ASSETS_DIR), name="assets")
 
 @app.get("/{full_path:path}")
-async def serve_react(full_path: str):
+async def serve_frontend(full_path: str):
     if os.path.exists(INDEX_FILE):
         return FileResponse(INDEX_FILE)
-    return {"message": "Frontend not found"}
+    return {"message": "Frontend build not found"}
