@@ -72,11 +72,17 @@ It helps users quickly evaluate resumes and improve them for internships and job
 resume-scanner-ai/
 │
 ├── frontend/
+│   ├── src/
+│   └── package.json
+│
 ├── backend/
-├── uploads/
-├── README.md
-└── requirements.txt
-```
+│   ├── main.py
+│   ├── roles.json
+│   └── utils/
+│       ├── parser.py
+│       └── matcher.py
+│
+└── README.md
 
 ---
 
