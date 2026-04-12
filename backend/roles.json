@@ -1,0 +1,122 @@
+{
+  "frontend developer": [
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "tailwind",
+    "git",
+    "api",
+    "responsive design"
+  ],
+
+  "backend developer": [
+    "python",
+    "java",
+    "node.js",
+    "fastapi",
+    "express",
+    "sql",
+    "mongodb",
+    "api",
+    "git"
+  ],
+
+  "full stack developer": [
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "node.js",
+    "express",
+    "mongodb",
+    "sql",
+    "git",
+    "api"
+  ],
+
+  "python developer": [
+    "python",
+    "fastapi",
+    "flask",
+    "sql",
+    "oop",
+    "git",
+    "api"
+  ],
+
+  "java developer": [
+    "java",
+    "spring boot",
+    "sql",
+    "oop",
+    "hibernate",
+    "git"
+  ],
+
+  "data analyst": [
+    "python",
+    "sql",
+    "excel",
+    "power bi",
+    "tableau",
+    "statistics",
+    "data cleaning"
+  ],
+
+  "machine learning engineer": [
+    "python",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "tensorflow",
+    "sql",
+    "machine learning"
+  ],
+
+  "ui ux designer": [
+    "figma",
+    "wireframing",
+    "prototyping",
+    "user research",
+    "design system",
+    "ui design"
+  ],
+
+  "android developer": [
+    "java",
+    "kotlin",
+    "android studio",
+    "firebase",
+    "xml",
+    "api"
+  ],
+
+  "software tester": [
+    "manual testing",
+    "selenium",
+    "test cases",
+    "bug tracking",
+    "jira",
+    "automation testing"
+  ],
+
+  "devops engineer": [
+    "docker",
+    "kubernetes",
+    "aws",
+    "linux",
+    "ci/cd",
+    "jenkins",
+    "git"
+  ],
+
+  "general fresher": [
+    "communication",
+    "problem solving",
+    "teamwork",
+    "projects",
+    "internship",
+    "leadership"
+  ]
+}
