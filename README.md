@@ -117,22 +117,22 @@ npm run dev
 ## 📌 Use Cases
 
 * Resume review for students
-*Internship/job preparation
-*Skill gap analysis
-*Placement preparation
-*Resume improvement tool
+* Internship/job preparation
+* Skill gap analysis
+* Placement preparation
+* Resume improvement tool
 
 ---
 
 ## 💡 Future Improvements
 
 * Gemini / OpenAI API integration
-*Job description matching
-*ATS score checker
-*Resume templates
-*Login system
-*Saved history
-*Download PDF report
+* Job description matching
+* ATS score checker
+* Resume templates
+* Login system
+* Saved history
+* Download PDF report
 
 ---
 
