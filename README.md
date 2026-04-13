@@ -15,7 +15,7 @@ It helps users evaluate their resume, identify missing skills, and improve job r
 
 ---
 
-## ✨ Features
+##  Features
 
 ### 📂 Resume Upload
 
