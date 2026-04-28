@@ -41,7 +41,7 @@ It helps users evaluate their resume, identify missing skills, and improve job r
 * Improvement suggestions
 * Better resume guidance
 
-### 🌐 Web Application
+###  Web Application
 
 * Clean and responsive UI
 * Fast processing
