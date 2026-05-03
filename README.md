@@ -1,6 +1,6 @@
 # 📄 Resume Scanner AI
 
-## 🚀 Live Demo
+##  Live Demo
 
 🌐 Deployed App: https://resume-scanner-ai-1.onrender.com/
 
