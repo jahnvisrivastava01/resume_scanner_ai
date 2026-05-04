@@ -22,6 +22,12 @@ function App() {
     "general fresher"
   ];
 
+  const getScoreLabel = (score) => {
+    if (score >= 80) return "Strong Match";
+    if (score >= 50) return "Moderate Match";
+    return "Needs Improvement";
+  };
+
   const handleSubmit = async () => {
     if (!file || !role) {
       alert("Please upload resume and select role");
@@ -34,8 +40,14 @@ function App() {
 
     try {
       setLoading(true);
-      const res = await axios.post("/analyze", formData);
+
+      const res = await axios.post(
+        "http://127.0.0.1:8000/analyze",
+        formData
+      );
+
       setResult(res.data);
+
     } catch (error) {
       console.log(error);
       alert(error.response?.data?.detail || "Something went wrong");
@@ -67,15 +79,17 @@ function App() {
     <div className="min-h-screen bg-slate-950 text-white px-4 py-10">
       <div className="max-w-4xl mx-auto">
 
+        {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
             Resume Scanner AI
           </h1>
           <p className="text-slate-400 mt-3 text-lg">
-            Upload your resume and check your role readiness
+            Analyze your resume and get AI-powered insights
           </p>
         </div>
 
+        {/* Upload Section */}
         <div className="bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl p-6 md:p-8 space-y-5">
 
           <div>
@@ -85,9 +99,9 @@ function App() {
 
             <input
               type="file"
-              accept=".pdf,.doc,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              accept=".pdf,.doc,.docx"
               onChange={handleFileChange}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 file:mr-4 file:px-4 file:py-2 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700"
+              className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3"
             />
           </div>
 
@@ -98,7 +112,7 @@ function App() {
 
             <select
               onChange={(e) => setRole(e.target.value)}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3"
             >
               <option value="">Choose Role</option>
               {roles.map((item, index) => (
@@ -117,40 +131,63 @@ function App() {
           </button>
         </div>
 
+        {/* Results Section */}
         {result && !result.error && (
           <div className="mt-8 bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl p-6 md:p-8">
 
             <h2 className="text-2xl font-bold mb-6 text-cyan-300">
-              Analysis Result
+              📊 Resume Analysis
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
 
+              {/* Role + Score */}
               <div className="bg-slate-800 rounded-2xl p-5">
-                <p className="text-slate-400 text-sm">Target Role</p>
+
+                <p className="text-slate-400 text-sm">🎯 Target Role</p>
                 <h3 className="text-xl font-semibold capitalize mt-1">
-                  {result.role}
+                  {result.target_role}
                 </h3>
 
-                <p className="text-slate-400 text-sm mt-5">Match Score</p>
+                <p className="text-slate-400 text-sm mt-5">🤖 AI Insight</p>
+                <h3 className="text-xl font-semibold text-cyan-400 capitalize mt-1">
+                  {result.predicted_role}
+                </h3>
+
+                {result.predicted_role !== result.target_role && (
+                  <p className="text-slate-400 text-sm mt-2">
+                    Your resume aligns more closely with{" "}
+                    <span className="text-cyan-300 font-medium">
+                      {result.predicted_role}
+                    </span>
+                  </p>
+                )}
+
+                <p className="text-slate-400 text-sm mt-5">📊 Match Score</p>
                 <div className="text-5xl font-bold text-green-400 mt-2">
                   {result.match_score}%
                 </div>
+
+                <p className="text-sm text-slate-400 mt-2">
+                  {getScoreLabel(result.match_score)}
+                </p>
               </div>
 
+              {/* Suggestions */}
               <div className="bg-slate-800 rounded-2xl p-5">
-                <p className="text-slate-400 text-sm mb-3">Suggestion</p>
+                <p className="text-slate-400 text-sm mb-3">💡 Recommendations</p>
                 <p className="leading-7 text-slate-200">
                   {result.suggestion}
                 </p>
               </div>
             </div>
 
+            {/* Skills */}
             <div className="grid md:grid-cols-2 gap-6 mt-6">
 
               <div className="bg-slate-800 rounded-2xl p-5">
                 <h3 className="text-lg font-semibold text-green-400 mb-3">
-                  Found Skills
+                  🟢 Strengths
                 </h3>
 
                 <div className="flex flex-wrap gap-2">
@@ -167,7 +204,7 @@ function App() {
 
               <div className="bg-slate-800 rounded-2xl p-5">
                 <h3 className="text-lg font-semibold text-red-400 mb-3">
-                  Missing Skills
+                  🔴 Areas to Improve
                 </h3>
 
                 <div className="flex flex-wrap gap-2">
@@ -185,9 +222,10 @@ function App() {
           </div>
         )}
 
+        {/* Footer */}
         <footer className="mt-12 border-t border-slate-800 pt-6 text-center">
           <p className="text-slate-400 text-sm">
-            Made by{" "}
+            Built with ❤️ by{" "}
             <span className="font-semibold text-cyan-300">
               Jahnvi Srivastava
             </span>

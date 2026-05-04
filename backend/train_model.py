@@ -7,20 +7,42 @@ from sklearn.pipeline import Pipeline
 # ---------------- DATASET ----------------
 data = pd.DataFrame({
     "resume_text": [
-        "python sql pandas data analysis",
-        "html css javascript react frontend",
-        "machine learning python tensorflow",
-        "java spring boot backend api",
-        "react node mongodb full stack",
-        "excel sql power bi data visualization"
+        # Data Analyst
+        "python sql pandas excel data analysis power bi tableau",
+        "data cleaning visualization statistics sql python",
+
+        # Frontend
+        "html css javascript react tailwind frontend ui",
+        "react js responsive design api integration html css",
+
+        # Backend
+        "node js express mongodb api backend development",
+        "java spring boot rest api sql backend",
+
+        # Full Stack
+        "react node mongodb full stack development api",
+        "html css javascript node express full stack",
+
+        # ML Engineer
+        "machine learning python tensorflow numpy pandas",
+        "deep learning nlp python scikit learn",
+
+        # Tester
+        "manual testing selenium test cases bug tracking jira",
+        "automation testing selenium webdriver qa testing",
+
+        # DevOps
+        "docker kubernetes aws linux ci cd jenkins",
+        "devops pipelines cloud deployment docker kubernetes"
     ],
     "role": [
-        "data analyst",
-        "frontend developer",
-        "machine learning engineer",
-        "backend developer",
-        "full stack developer",
-        "data analyst"
+        "data analyst","data analyst",
+        "frontend developer","frontend developer",
+        "backend developer","backend developer",
+        "full stack developer","full stack developer",
+        "machine learning engineer","machine learning engineer",
+        "software tester","software tester",
+        "devops engineer","devops engineer"
     ]
 })
 
