@@ -1,92 +1,97 @@
+Here’s your **final cleaned README** — you can **copy-paste directly into GitHub** (no fixes needed after this) 👇
+
+---
+
+```md
 # 📄 Resume Scanner AI
 
-##  Live Demo
-
-🌐 Deployed App: https://resume-scanner-ai-1.onrender.com/
+## 🌐 Live Demo
+Deployed App: https://resume-scanner-ai-1.onrender.com/
 
 ---
 
-##  Overview
+## 📌 Overview
 
-Resume Scanner AI is a full-stack web application that analyzes uploaded resumes and provides smart insights based on selected career roles.
+Resume Scanner AI is a full-stack web application that analyzes uploaded resumes and provides intelligent insights based on selected career roles.
 
-It helps users evaluate their resume, identify missing skills, and improve job readiness for internships and placements.
+It helps users:
+- Evaluate their resume
+- Identify missing skills
+- Improve job readiness for internships and placements
 
 This project combines:
-- ML-based role prediction
-- Rule-based skill matching and scoring
-
+- 🤖 ML-based role prediction  
+- ⚙️ Rule-based skill matching and scoring  
 
 ---
 
-##  Features
+## 🚀 Features
 
 ### 📂 Resume Upload
-
-* Upload resumes in:
-
-  * PDF
-  * DOCX
-* Blocks unsupported file types
+- Supports PDF and DOCX files
+- Blocks unsupported file types
 
 ### 🎯 Role-Based Analysis
-
-* Select a target role
-* Compares resume skills with required role skills
-* Calculates match score
-* Detects missing skills
-* Suggests improvements
+- Select a target role
+- Compares resume with required skills
+- Calculates match score
+- Identifies missing skills
+- Provides improvement suggestions
 
 ### 📊 Smart Output
+- Match score with label (Strong / Moderate / Needs Improvement)
+- AI predicted role
+- Found & missing skills
+- Clear recommendations
 
-* Resume match score
-* Found skills
-* Missing skills
-* Improvement suggestions
-* Better resume guidance
-
-###  Web Application
-
-* Clean and responsive UI
-* Fast processing
-* Easy upload and results view
+### 🎨 Web Interface
+- Clean and responsive UI
+- Fast processing
+- Smooth user experience
 
 ---
 
-## 🧠 Tech Stack
-
-### Frontend
-
-* React
-* Tailwind CSS
-* Vite
-* Axios
-
-### Backend
-
-* Python
-* FastAPI
-* PyPDF2
-* python - docx
-
-## 🤖 ML Integration
+## 🧠 ML Integration
 
 This project uses Machine Learning to enhance resume analysis.
 
-- Uses **TF-IDF Vectorization** to convert resume text into numerical features
-- Uses **Multinomial Naive Bayes** for job role classification
-- Predicts the most suitable job role based on resume content
+- Uses **TF-IDF Vectorization** for text feature extraction  
+- Uses **Multinomial Naive Bayes** for classification  
+- Predicts the most suitable job role from resume text  
 
-Example:
-Resume → "Python, SQL, Data Analysis"  
-→ Predicted Role: **Data Analyst**
+### Example
+```
 
-The ML model is trained using a custom dataset and stored as `model.pkl`.
+Resume → "Python, SQL, Data Analysis"
+→ Predicted Role: Data Analyst
+
+```
+
+The trained model is stored as `model.pkl`.
+
+---
+
+## 🧰 Tech Stack
+
+### Frontend
+- React
+- Tailwind CSS
+- Vite
+- Axios
+
+### Backend
+- Python
+- FastAPI
+- PyPDF2
+- python-docx
+- scikit-learn
+
 ---
 
 ## 📂 Project Structure
 
-```text
+```
+
 resume-scanner-ai/
 │
 ├── frontend/
@@ -95,35 +100,43 @@ resume-scanner-ai/
 │
 ├── backend/
 │   ├── main.py
+│   ├── train_model.py
 │   ├── roles.json
+│   ├── model.pkl
 │   └── utils/
 │       ├── parser.py
 │       └── matcher.py
 │
 └── README.md
 
+````
+
 ---
 
 ## ▶️ Run Locally
 
-### 1. Clone Repo
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/jahnvisrivastava01/resume_scanner_ai.git
 cd resume-scanner-ai
-```
+````
 
-### 2. Backend
+---
 
-```
+### 2️⃣ Backend Setup
+
+```bash
 cd backend
 python -m venv venv
-source venv/Scripts/activate
-pip install fastapi uvicorn python-multipart PyPDF2 python-docx
-python -m uvicorn main:app --reload
+venv\Scripts\activate   # Windows
+pip install fastapi uvicorn python-multipart PyPDF2 python-docx scikit-learn
+uvicorn main:app --reload
 ```
 
-### 2. Frontend
+---
+
+### 3️⃣ Frontend Setup
 
 ```bash
 cd frontend
@@ -131,52 +144,40 @@ npm install
 npm run dev
 ```
 
-### 3.Generate ML Model
+---
+
+### 4️⃣ Generate ML Model
 
 ```bash
 cd backend
 python train_model.py
-
-
----
-
-## 📂 4. Update Project Structure
-
-Add missing file:
-
-```md
-├── backend/
-│   ├── main.py
-│   ├── train_model.py   ← ADD THIS
-│   ├── roles.json
-│   ├── model.pkl
-│   └── utils/
+```
 
 ---
 
 ## 📌 Use Cases
 
-* Resume review for students
-* Internship/job preparation
+* Resume evaluation for students
+* Internship & placement preparation
 * Skill gap analysis
-* Placement preparation
 * Resume improvement tool
 
 ---
 
 ## 💡 Future Improvements
 
-* Gemini / OpenAI API integration
-* Job description matching
-* ATS score checker
+* AI-powered job description matching
+* ATS score calculation
 * Resume templates
-* Login system
+* User authentication
 * Saved history
-* Download PDF report
+* Downloadable PDF reports
 
 ---
 
 ## 👩‍💻 Author
 
-Jahnvi Srivastava
+**Jahnvi Srivastava**
+
+````
 
