@@ -12,6 +12,10 @@ Resume Scanner AI is a full-stack web application that analyzes uploaded resumes
 
 It helps users evaluate their resume, identify missing skills, and improve job readiness for internships and placements.
 
+This project combines:
+- ML-based role prediction
+- Rule-based skill matching and scoring
+
 
 ---
 
@@ -64,6 +68,20 @@ It helps users evaluate their resume, identify missing skills, and improve job r
 * FastAPI
 * PyPDF2
 * python - docx
+
+## 🤖 ML Integration
+
+This project uses Machine Learning to enhance resume analysis.
+
+- Uses **TF-IDF Vectorization** to convert resume text into numerical features
+- Uses **Multinomial Naive Bayes** for job role classification
+- Predicts the most suitable job role based on resume content
+
+Example:
+Resume → "Python, SQL, Data Analysis"  
+→ Predicted Role: **Data Analyst**
+
+The ML model is trained using a custom dataset and stored as `model.pkl`.
 ---
 
 ## 📂 Project Structure
@@ -112,6 +130,27 @@ cd frontend
 npm install
 npm run dev
 ```
+
+### 3.Generate ML Model
+
+```bash
+cd backend
+python train_model.py
+
+
+---
+
+## 📂 4. Update Project Structure
+
+Add missing file:
+
+```md
+├── backend/
+│   ├── main.py
+│   ├── train_model.py   ← ADD THIS
+│   ├── roles.json
+│   ├── model.pkl
+│   └── utils/
 
 ---
 
