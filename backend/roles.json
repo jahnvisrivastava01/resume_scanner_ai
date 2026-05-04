@@ -4,16 +4,20 @@
     "css",
     "javascript",
     "react",
+    "react js",
     "tailwind",
     "git",
     "api",
+    "responsive",
     "responsive design"
   ],
 
   "backend developer": [
     "python",
     "java",
-    "node.js",
+    "node",
+    "node js",
+    "nodejs",
     "fastapi",
     "express",
     "sql",
@@ -27,7 +31,7 @@
     "css",
     "javascript",
     "react",
-    "node.js",
+    "node",
     "express",
     "mongodb",
     "sql",
@@ -47,6 +51,7 @@
 
   "java developer": [
     "java",
+    "spring",
     "spring boot",
     "sql",
     "oop",
@@ -61,22 +66,27 @@
     "power bi",
     "tableau",
     "statistics",
-    "data cleaning"
+    "data cleaning",
+    "pandas"
   ],
 
   "machine learning engineer": [
     "python",
     "pandas",
     "numpy",
-    "scikit-learn",
+    "scikit",
+    "scikit learn",
     "tensorflow",
     "sql",
-    "machine learning"
+    "machine learning",
+    "ml"
   ],
 
   "ui ux designer": [
     "figma",
+    "wireframe",
     "wireframing",
+    "prototype",
     "prototyping",
     "user research",
     "design system",
@@ -86,6 +96,7 @@
   "android developer": [
     "java",
     "kotlin",
+    "android",
     "android studio",
     "firebase",
     "xml",
@@ -106,7 +117,7 @@
     "kubernetes",
     "aws",
     "linux",
-    "ci/cd",
+    "ci cd",
     "jenkins",
     "git"
   ],
