@@ -1,8 +1,3 @@
-Here’s your **final cleaned README** — you can **copy-paste directly into GitHub** (no fixes needed after this) 👇
-
----
-
-```md
 # 📄 Resume Scanner AI
 
 ## 🌐 Live Demo
